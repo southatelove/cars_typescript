@@ -1,6 +1,99 @@
 *
     box-sizing: border-box
 .container
-    max-width: 1000px
+    max-width: 1140px
     margin: 0 auto
     position: relative
+.header-section
+    &__content-container
+        margin-bottom: 40px
+.filter-box
+    &__filter
+        background: #C4C4C4
+        margin-bottom: 50px
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        height: 40px
+    p
+        margin-right: 40px
+    button
+        margin-right: 20px
+        &:last-child
+            margin-right: 20px
+.main-section
+    &__content-container
+        grid-column-gap: 30px
+        display: grid
+        grid-template-columns: repeat(3,minmax(0,1fr))
+        grid-row-gap: 30px
+.content-container
+    &__card
+        width: 360px
+        position: relative
+.card
+    &__img
+        display: flex
+        width: 100%
+        height: 260px
+        background: #C4C4C4
+        border-radius: 2%
+        align-items: center
+        justify-content: center
+        margin: 0
+        margin-bottom: 12px
+    &__name
+        color: #009CF0
+        margin-right: 10px
+        font-size: 20px
+    &__model
+        color: #009CF0
+        font-size: 20px
+    &__info
+        display: flex
+        margin-bottom: 12px
+    &__edit-btn
+        display: flex
+        flex-direction: column-reverse
+        position: absolute
+        right: 0px
+        top: 0px
+        img
+            height: 30px
+    &__price
+        margin-bottom: 12px
+        background: #C4C4C4
+        display: flex
+        height: 34px
+        align-items: center
+        justify-content: center
+        font-size: 24px
+    &__placement
+        background: #C4C4C4
+        display: flex
+        align-items: center
+        justify-content: center
+        max-width: 240px
+        height: 34px
+.color-year
+    display: flex
+    max-width: 300px
+    height: 34px
+    background: #C4C4C4
+    justify-content: space-between
+    align-items: center
+    padding: 10px
+@media (max-width:1199px)
+    .container
+        width: 900px
+        margin: 0 auto
+        position: relative
+    .content-container
+        &__card
+            width: 280px
+    .main-section
+        &__content-container
+            grid-column-gap: 30px
+            display: grid
+            grid-template-columns: 280px 280px 280px
+            grid-row-gap: 30px
