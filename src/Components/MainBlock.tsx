@@ -65,6 +65,16 @@ function MainBlock() {
       latitude: 70.753215,
       longitude: 45.620393,
     },
+    {
+      id: 7,
+      name: "Mazda",
+      model: "CX-5",
+      year: 2010,
+      color: "moonlight",
+      price: 5000,
+      latitude: 10.753215,
+      longitude: 15.620393,
+    },
   ]);
 
   function deleteCard(id: number) {

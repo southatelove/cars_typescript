@@ -104,6 +104,13 @@
   padding: 10px;
 }
 
+.footer__container {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 1199px) {
   .container {
     width: 900px;
