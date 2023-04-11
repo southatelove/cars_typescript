@@ -14,7 +14,7 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
     setCardInfo(refreshCards);
   }
 
-  const [modalActive, setModalActive] = React.useState(true);
+  const [modalActive, setModalActive] = React.useState(false);
 
   return (
     <section className="main-section">
