@@ -10,6 +10,8 @@ const Modal = ({
 }: ModalT) => {
   const saveChanges = (item: any) => {
     setModalActive(false);
+    console.log(item);
+
     setCardInfo(
       cardInfo.map((itemEdit: any) =>
         itemEdit.id === item.id ? item : itemEdit
@@ -56,7 +58,7 @@ const Modal = ({
                   className="modal__btn"
                   onClick={() => saveChanges(item)}
                 >
-                  Save
+                  Сохранить
                 </button>
               </div>
             ))}
