@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import MainBlock from "./Components/MainBlock";
 import Filter from "./Components/Filter";
 import Footer from "./Components/Footer";
+import { Maps } from "./Components/Maps";
 
 function App() {
   const [cardInfo, setCardInfo] =
@@ -22,6 +23,7 @@ function App() {
       <Header />
       <Filter cardInfo={cardInfo} setCardInfo={setCardInfo} />
       <MainBlock cardInfo={cardInfo} setCardInfo={setCardInfo} />
+      <Maps cardInfo={cardInfo} />
       <Footer />
     </>
   );

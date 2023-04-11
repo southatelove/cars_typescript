@@ -14,9 +14,6 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
     setCardInfo(refreshCards);
   }
 
-  // const editName = (id: string | number) => {
-  //   console.log("Я ", id);
-  // };
   const editClick = (item: Record<string, number | string>) => {
     setModalActive(true);
     setEditCard([item]);
@@ -33,9 +30,14 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
           cardInfo.map((item: Record<string, number | string>) => (
             <div key={item.id} className="content-container__card">
               <div className="card__edit-btn">
-                <img src={edit_icon} onClick={() => editClick(item)}></img>
+                <img
+                  src={edit_icon}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => editClick(item)}
+                ></img>
                 <img
                   src={delete_icon}
+                  style={{ cursor: "pointer" }}
                   onClick={() => deleteCard(item.id as number)}
                 ></img>
               </div>
@@ -53,7 +55,6 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
                 <div className="card__color">Цвет: {item.color}</div>
                 <div className="card__year">Год выпуска: {item.year}</div>
               </div>
-              <div className="card__placement">Местоположение</div>
             </div>
           ))}
       </div>
