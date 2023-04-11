@@ -3,6 +3,8 @@ import React from "react";
 import delete_icon from "../icons/delete_icon.svg";
 import edit_icon from "../icons/edit_icon.svg";
 
+import Modal from "./Modal";
+
 import { Item } from "./types";
 
 const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
@@ -12,6 +14,8 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
     setCardInfo(refreshCards);
   }
 
+  const [modalActive, setModalActive] = React.useState(true);
+
   return (
     <section className="main-section">
       <div className="main-section__content-container container">
@@ -19,7 +23,7 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
           cardInfo.map((item: Record<string, number | string>) => (
             <div key={item.id} className="content-container__card">
               <div className="card__edit-btn">
-                <img src={edit_icon}></img>
+                <img src={edit_icon} onClick={() => setModalActive(true)}></img>
                 <img
                   src={delete_icon}
                   onClick={() => deleteCard(item.id as number)}
@@ -43,6 +47,9 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
             </div>
           ))}
       </div>
+      <Modal modalActive={modalActive} setModalActive={setModalActive}>
+        <div>Modal WINDOW</div>
+      </Modal>
     </section>
   );
 };

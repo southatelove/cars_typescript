@@ -5,7 +5,8 @@ export interface Item {
   ) => void;
 }
 
-// export interface Card {
-//   cardInfo: Record<string, number | string>[];
-//   setCardInfo: Record<string, number | string>[] | undefined;
-// }
+export interface ModalT {
+  modalActive: boolean;
+  setModalActive: (e: boolean) => void;
+  children: JSX.Element;
+}

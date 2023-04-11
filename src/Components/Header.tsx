@@ -2,7 +2,7 @@ import React from "react";
 
 import logo_trajectory from "../icons/logo_trajectory.svg";
 
-function Header() {
+const Header = () => {
   return (
     <section className="header-section">
       <div className="header-section__content-container container">
@@ -10,5 +10,5 @@ function Header() {
       </div>
     </section>
   );
-}
+};
 export default Header;

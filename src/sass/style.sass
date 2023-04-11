@@ -22,7 +22,6 @@
         &:last-child
             margin-right: 20px
 .main-section
-    min-height: 1500px
     &__content-container
         grid-column-gap: 30px
         display: grid
@@ -86,15 +85,43 @@
     padding: 10px
 
 .footer
-    position: absolute
-    bottom: 0
+    // position: absolute
+    // bottom: 0
+    // height: 90px
     width: 100%
-
     &__container
         height: 90px
         display: flex
         align-items: center
         justify-content: center
+
+.modal
+    height: 100vh
+    width: 100vw
+    background-color: rgba(0,0,0,0.4)
+    position: fixed
+    top: 0
+    left: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    opacity: 0
+    pointer-events: none
+    transition: 0.5s
+    &__content
+        padding: 20px
+        border-radius: 12px
+        background: white
+        // width: 360px
+        // height: 430px
+        width: 50vw
+        transition: 0.4s all
+.modal.active
+    opacity: 1
+    pointer-events: all
+.modal__content.active
+    transform: scale (1)
+
 @media (max-width:1199px)
     .container
         width: 900px
