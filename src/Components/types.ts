@@ -9,6 +9,9 @@ export interface ModalT {
   modalActive: boolean;
   setModalActive: (e: boolean) => void;
   editCard: any;
+  setEditCard: any;
+  setCardInfo: any;
+  cardInfo: any;
 }
 // JSX.IntrinsicElements.div: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 

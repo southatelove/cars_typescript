@@ -25,6 +25,7 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
   const [modalActive, setModalActive] = React.useState(false);
   const [editCard, setEditCard] =
     React.useState<Record<string, number | string>[]>();
+
   return (
     <section className="main-section">
       <div className="main-section__content-container container">
@@ -60,6 +61,9 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
         modalActive={modalActive}
         setModalActive={setModalActive}
         editCard={editCard}
+        setEditCard={setEditCard}
+        setCardInfo={setCardInfo}
+        cardInfo={cardInfo}
       />
     </section>
   );
