@@ -30,6 +30,11 @@
   justify-content: center;
   width: 73px;
   cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+  background: #009CF0;
+  color: #fff;
+  font-size: 16px;
 }
 .filter-box button:last-child {
   margin-right: 20px;
@@ -94,6 +99,13 @@
 }
 .card__edit-btn img {
   height: 30px;
+  border: 1px solid #009CF0;
+  background: #009CF0;
+  border-radius: 50%;
+}
+.card__edit-btn img:last-child {
+  border: 1px solid pink;
+  background: pink;
 }
 .card__price {
   margin-bottom: 12px;

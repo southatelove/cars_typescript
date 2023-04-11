@@ -38,16 +38,16 @@ const Filter = ({ cardInfo, setCardInfo }: Item) => {
   return (
     <div className="filter-box container">
       <div className="filter-box__filter">
-        <p>Sort by: </p>
+        <p>Сорторитовать: </p>
         <button onClick={() => filteredByPrice()}>
-          Price
+          Цена
           <img
             src={arrow_icon}
             className={filter.price === "UP" ? "arrowUp" : "arrowDown"}
           />
         </button>
         <button onClick={() => filteredByYear()}>
-          Year
+          Год
           <img
             src={arrow_icon}
             className={filter.year === "UP" ? "arrowUp" : "arrowDown"}
