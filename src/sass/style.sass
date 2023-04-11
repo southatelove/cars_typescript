@@ -23,6 +23,7 @@
         align-items: center
         justify-content: center
         width: 73px
+        cursor: pointer
         &:last-child
             margin-right: 20px
 
@@ -73,6 +74,7 @@
         top: 0px
         img
             height: 30px
+
     &__price
         margin-bottom: 12px
         background: #C4C4C4
@@ -116,14 +118,14 @@
         padding: 20px
         border-radius: 12px
         background: white
-        // width: 360px
-        // height: 430px
         width: 15vw
         transition: 0.4s all
     &__editing
         display: flex
         flex-direction: column
         padding: 20px
+        justify-content: center
+        align-items: center
         input
             margin-bottom: 20px
             max-width: 250px
@@ -136,7 +138,9 @@
     pointer-events: all
 .modal__content.active
     transform: scale (1)
-
+.yandex-map
+    width: 100%
+    height: 500px
 @media (max-width:1199px)
     .container
         width: 900px
@@ -151,3 +155,32 @@
             display: grid
             grid-template-columns: 280px 280px 280px
             grid-row-gap: 30px
+@media (max-width:991px)
+    .container
+        width: 720px
+    .main-section
+        &__content-container
+            align-items: center
+            justify-content: center
+            grid-template-columns: 280px 280px
+@media (max-width:767px)
+    .container
+        width: 540px
+    .main-section
+        &__content-container
+            grid-column-gap: 30px
+            display: grid
+            grid-template-columns: 280px
+            grid-row-gap: 30px
+    // .yandex-map
+    //     display: flex
+    //     align-items: center
+    //     justify-content: center
+    //     width: 100%
+    //     height: 500px
+@media (max-width:575px)
+    .container
+        width: 100%
+    .yandex
+        display: flex
+        width: 80%

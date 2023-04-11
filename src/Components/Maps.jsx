@@ -9,10 +9,11 @@ export const Maps = ({ cardInfo }) => {
 
   return (
     <YMaps>
-      <div className="container map-section__container">
+      <div className="container map-section__container yandex">
         <Map
-          width="1140px"
-          height="500px"
+          // width="100%"
+          // height="500px"
+          className="yandex-map"
           defaultState={{
             center: [55.751574, 37.573856],
             zoom: 5,
