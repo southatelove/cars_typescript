@@ -86,7 +86,7 @@ function MainBlock() {
     <section className="main-section">
       <div className="main-section__content-container container">
         {cardInfo.map((item) => (
-          <div className="content-container__card">
+          <div key={item.id} className="content-container__card">
             <div className="card__edit-btn">
               <img src={edit_icon}></img>
               <img src={delete_icon} onClick={() => deleteCard(item.id)}></img>
