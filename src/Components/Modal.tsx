@@ -1,6 +1,6 @@
 import { ModalT } from "./types";
 
-const Modal = ({ modalActive, setModalActive, children }: ModalT) => {
+const Modal = ({ modalActive, setModalActive, editCard }: ModalT) => {
   return (
     <div
       className={modalActive ? "modal active" : "modal"}
@@ -10,7 +10,17 @@ const Modal = ({ modalActive, setModalActive, children }: ModalT) => {
         className={modalActive ? "modal__content active" : "modal__content"}
         onClick={(e) => e.stopPropagation()}
       >
-        {children}
+        <div>
+          {editCard &&
+            editCard.map((item: any) => (
+              <div className="modal__editing">
+                <input value={item.name} onChange={(e) => e.target.value} />
+                <input value={item.model} />
+                <input value={item.price} />
+                <button className="modal__btn">Save</button>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );

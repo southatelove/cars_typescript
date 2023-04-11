@@ -14,8 +14,17 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
     setCardInfo(refreshCards);
   }
 
-  const [modalActive, setModalActive] = React.useState(false);
+  // const editName = (id: string | number) => {
+  //   console.log("Я ", id);
+  // };
+  const editClick = (item: Record<string, number | string>) => {
+    setModalActive(true);
+    setEditCard([item]);
+  };
 
+  const [modalActive, setModalActive] = React.useState(false);
+  const [editCard, setEditCard] =
+    React.useState<Record<string, number | string>[]>();
   return (
     <section className="main-section">
       <div className="main-section__content-container container">
@@ -23,7 +32,7 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
           cardInfo.map((item: Record<string, number | string>) => (
             <div key={item.id} className="content-container__card">
               <div className="card__edit-btn">
-                <img src={edit_icon} onClick={() => setModalActive(true)}></img>
+                <img src={edit_icon} onClick={() => editClick(item)}></img>
                 <img
                   src={delete_icon}
                   onClick={() => deleteCard(item.id as number)}
@@ -47,9 +56,11 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
             </div>
           ))}
       </div>
-      <Modal modalActive={modalActive} setModalActive={setModalActive}>
-        <div>Modal WINDOW</div>
-      </Modal>
+      <Modal
+        modalActive={modalActive}
+        setModalActive={setModalActive}
+        editCard={editCard}
+      />
     </section>
   );
 };

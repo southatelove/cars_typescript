@@ -135,8 +135,23 @@
   padding: 20px;
   border-radius: 12px;
   background: white;
-  width: 50vw;
+  width: 15vw;
   transition: 0.4s all;
+}
+.modal__editing {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.modal__editing input {
+  margin-bottom: 20px;
+  max-width: 250px;
+}
+.modal__editing input:last-child {
+  margin-bottom: 0;
+}
+.modal__btn {
+  max-width: 250px;
 }
 
 .modal.active {

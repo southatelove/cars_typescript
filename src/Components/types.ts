@@ -8,5 +8,11 @@ export interface Item {
 export interface ModalT {
   modalActive: boolean;
   setModalActive: (e: boolean) => void;
-  children: JSX.Element;
+  editCard: any;
 }
+// JSX.IntrinsicElements.div: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+// export interface carName extends EventTarget {
+//   carName: string;
+//   setCarName: string;
+// }

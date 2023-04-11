@@ -117,8 +117,19 @@
         background: white
         // width: 360px
         // height: 430px
-        width: 50vw
+        width: 15vw
         transition: 0.4s all
+    &__editing
+        display: flex
+        flex-direction: column
+        padding: 20px
+        input
+            margin-bottom: 20px
+            max-width: 250px
+            &:last-child
+                margin-bottom: 0
+    &__btn
+        max-width: 250px
 .modal.active
     opacity: 1
     pointer-events: all
