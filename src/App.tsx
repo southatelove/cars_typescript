@@ -6,11 +6,22 @@ import Filter from "./Components/Filter";
 import Footer from "./Components/Footer";
 
 function App() {
+  const [cardInfo, setCardInfo] =
+    React.useState<Record<string, number | string>[]>();
+
+  React.useEffect(() => {
+    fetch("https://test.tspb.su/test-task/vehicles").then((response) => {
+      return response.json().then((data) => {
+        data && setCardInfo(data);
+      });
+    });
+  }, []);
+
   return (
     <>
       <Header />
-      <Filter />
-      <MainBlock />
+      <Filter cardInfo={cardInfo} setCardInfo={setCardInfo} />
+      <MainBlock cardInfo={cardInfo} setCardInfo={setCardInfo} />
       <Footer />
     </>
   );
