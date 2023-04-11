@@ -25,9 +25,23 @@
 }
 .filter-box button {
   margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 73px;
 }
 .filter-box button:last-child {
   margin-right: 20px;
+}
+
+.arrowUp {
+  transform: rotate(90deg);
+  display: block;
+}
+
+.arrowDown {
+  transform: rotate(-90deg);
+  display: block;
 }
 
 .main-section__content-container {

@@ -1,5 +1,7 @@
 import React from "react";
 
+import arrow_icon from "../icons/arrow_icon.svg";
+
 import { Item } from "./types";
 
 const Filter = ({ cardInfo, setCardInfo }: Item) => {
@@ -39,9 +41,18 @@ const Filter = ({ cardInfo, setCardInfo }: Item) => {
         <p>Sort by: </p>
         <button onClick={() => filteredByPrice()}>
           Price
-          {/* <span className={filter.year === "UP" ? }>@</span> */}
+          <img
+            src={arrow_icon}
+            className={filter.price === "UP" ? "arrowUp" : "arrowDown"}
+          />
         </button>
-        <button onClick={() => filteredByYear()}>Year</button>
+        <button onClick={() => filteredByYear()}>
+          Year
+          <img
+            src={arrow_icon}
+            className={filter.year === "UP" ? "arrowUp" : "arrowDown"}
+          />
+        </button>
       </div>
     </div>
   );
