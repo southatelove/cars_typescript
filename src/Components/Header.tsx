@@ -1,8 +1,6 @@
-import React from "react";
-
 import logo_trajectory from "../icons/logo_trajectory.svg";
 
-const Header = () => {
+export const Header = () => {
   return (
     <section className="header-section">
       <div className="header-section__content-container container">
@@ -11,4 +9,3 @@ const Header = () => {
     </section>
   );
 };
-export default Header;

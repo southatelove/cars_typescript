@@ -1,27 +1,26 @@
-import React from "react";
+import { useState } from "react";
 
 import delete_icon from "../icons/delete_icon.svg";
 import edit_icon from "../icons/edit_icon.svg";
 
-import Modal from "./Modal";
+import { Modal } from "./index";
 
 import { Item } from "./types";
 
-const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
-  function deleteCard(id: number) {
+export const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
+  const [modalActive, setModalActive] = useState(false);
+  const [editCard, setEditCard] = useState<Record<string, number | string>[]>();
+
+  const deleteCard = (id: number) => {
     const refreshCards: Record<string, number | string>[] | undefined =
       cardInfo && [...cardInfo].filter((item) => item.id !== id);
     setCardInfo(refreshCards);
-  }
+  };
 
   const editClick = (item: Record<string, number | string>) => {
     setModalActive(true);
     setEditCard([item]);
   };
-
-  const [modalActive, setModalActive] = React.useState(false);
-  const [editCard, setEditCard] =
-    React.useState<Record<string, number | string>[]>();
 
   return (
     <section className="main-section">
@@ -58,6 +57,11 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
             </div>
           ))}
       </div>
+      {cardInfo && !cardInfo.length && (
+        <div className="container-info container">
+          Данных нет, необходимо обратиться к системному администратору
+        </div>
+      )}
       <Modal
         modalActive={modalActive}
         setModalActive={setModalActive}
@@ -69,4 +73,3 @@ const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
     </section>
   );
 };
-export default MainBlock;

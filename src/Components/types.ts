@@ -4,18 +4,11 @@ export interface Item {
     refreshCards: Record<string, number | string>[] | undefined
   ) => void;
 }
-
-export interface ModalT {
+export interface IModal {
   modalActive: boolean;
   setModalActive: (e: boolean) => void;
-  editCard: any;
-  setEditCard: any;
-  setCardInfo: any;
-  cardInfo: any;
+  setEditCard: (e: Record<string, string | number>[] | undefined) => void;
+  setCardInfo: (e: Record<string, string | number>[] | undefined) => void;
+  cardInfo?: Record<string, number | string>[];
+  editCard?: Record<string, number | string>[];
 }
-// JSX.IntrinsicElements.div: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
-
-// export interface carName extends EventTarget {
-//   carName: string;
-//   setCarName: string;
-// }

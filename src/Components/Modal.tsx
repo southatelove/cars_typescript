@@ -1,21 +1,18 @@
-import { ModalT } from "./types";
+import { IModal } from "./types";
 
-const Modal = ({
+export const Modal = ({
   modalActive,
   setModalActive,
   editCard,
   setEditCard,
   setCardInfo,
   cardInfo,
-}: ModalT) => {
-  const saveChanges = (item: any) => {
+}: IModal) => {
+  const saveChanges = (item: Record<string, string | number>) => {
     setModalActive(false);
-    console.log(item);
-
     setCardInfo(
-      cardInfo.map((itemEdit: any) =>
-        itemEdit.id === item.id ? item : itemEdit
-      )
+      cardInfo &&
+        cardInfo.map((itemEdit) => (itemEdit.id === item.id ? item : itemEdit))
     );
   };
 
@@ -30,7 +27,7 @@ const Modal = ({
       >
         <div>
           {editCard &&
-            editCard.map((item: any) => (
+            editCard.map((item) => (
               <div className="modal__editing">
                 <input
                   type="text"
@@ -67,5 +64,3 @@ const Modal = ({
     </div>
   );
 };
-
-export default Modal;

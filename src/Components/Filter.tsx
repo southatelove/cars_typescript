@@ -1,11 +1,11 @@
-import React from "react";
+import { useState } from "react";
 
 import arrow_icon from "../icons/arrow_icon.svg";
 
 import { Item } from "./types";
 
-const Filter = ({ cardInfo, setCardInfo }: Item) => {
-  const [filter, setFilter] = React.useState({ price: "UP", year: "UP" });
+export const Filter = ({ cardInfo, setCardInfo }: Item) => {
+  const [filter, setFilter] = useState({ price: "UP", year: "UP" });
 
   const filteredByPrice = () => {
     if (filter.price === "UP") {
@@ -38,24 +38,35 @@ const Filter = ({ cardInfo, setCardInfo }: Item) => {
   return (
     <div className="filter-box container">
       <div className="filter-box__filter">
-        <p>Сорторитовать: </p>
-        <button onClick={() => filteredByPrice()}>
-          Цена
-          <img
-            src={arrow_icon}
-            className={filter.price === "UP" ? "arrowUp" : "arrowDown"}
-          />
+        <button className="filter-box__btn-map">
+          <a href="#maps" className="filter-box__text">
+            Местоположение
+          </a>
         </button>
-        <button onClick={() => filteredByYear()}>
-          Год
-          <img
-            src={arrow_icon}
-            className={filter.year === "UP" ? "arrowUp" : "arrowDown"}
-          />
-        </button>
+        <div className="filter-box__sort">
+          <p>Сортировать: </p>
+          <button
+            className="filter-box__btn-filter"
+            onClick={() => filteredByPrice()}
+          >
+            Цена
+            <img
+              src={arrow_icon}
+              className={filter.price === "UP" ? "arrowUp" : "arrowDown"}
+            />
+          </button>
+          <button
+            className="filter-box__btn-filter"
+            onClick={() => filteredByYear()}
+          >
+            Год
+            <img
+              src={arrow_icon}
+              className={filter.year === "UP" ? "arrowUp" : "arrowDown"}
+            />
+          </button>
+        </div>
       </div>
     </div>
   );
 };
-
-export default Filter;
