@@ -5,11 +5,15 @@ export const App = () => {
   const [cardInfo, setCardInfo] = useState<Record<string, number | string>[]>();
 
   useEffect(() => {
-    fetch("https://test.tspb.su/test-task/vehicles").then((response) => {
-      return response.json().then((data) => {
-        data && setCardInfo(data);
+    try {
+      fetch("https://tes.tspb.su/test-task/vehicles").then((response) => {
+        return response.json().then((data) => {
+          data && setCardInfo(data);
+        });
       });
-    });
+    } catch (error) {
+      console.error("error in fetch get request items »", error);
+    }
   }, []);
 
   return (
