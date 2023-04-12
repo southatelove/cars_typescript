@@ -6,7 +6,7 @@ export const App = () => {
 
   useEffect(() => {
     try {
-      fetch("https://tes.tspb.su/test-task/vehicles").then((response) => {
+      fetch("https://test.tspb.su/test-task/vehicles").then((response) => {
         return response.json().then((data) => {
           data && setCardInfo(data);
         });
