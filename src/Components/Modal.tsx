@@ -12,7 +12,7 @@ export const Modal = ({
     setModalActive(false);
     setCardInfo(
       cardInfo &&
-        cardInfo.map((itemEdit) => (itemEdit.id === item.id ? item : itemEdit))
+        cardInfo.map((editCard) => (editCard.id === item.id ? item : editCard))
     );
   };
 
@@ -28,7 +28,7 @@ export const Modal = ({
         <div>
           {editCard &&
             editCard.map((item) => (
-              <div className="modal__editing">
+              <div className="modal__editing" key={item.id}>
                 <input
                   type="text"
                   value={item.name}

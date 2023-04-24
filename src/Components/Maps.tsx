@@ -25,6 +25,7 @@ export const Maps = ({
             {cardInfo &&
               cardInfo.map((item) => (
                 <Placemark
+                  key={item.id}
                   geometry={[item.latitude, item.longitude]}
                   properties={{
                     hintContent: item.name + " " + item.model,
