@@ -3,6 +3,7 @@ export interface Item {
   setCardInfo: (
     refreshCards: Record<string, number | string>[] | undefined
   ) => void;
+  loading:boolean;
 }
 export interface IModal {
   modalActive: boolean;

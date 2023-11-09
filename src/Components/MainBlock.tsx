@@ -7,7 +7,9 @@ import { Modal } from "./index";
 
 import { Item } from "./types";
 
-export const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
+
+
+export const MainBlock = ({ cardInfo, setCardInfo,loading}: Item) => {
   const [modalActive, setModalActive] = useState(false);
   const [editCard, setEditCard] = useState<Record<string, number | string>[]>();
 
@@ -25,6 +27,8 @@ export const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
   return (
     <section className="main-section">
       <div className="main-section__content-container container">
+        {!loading ? <div>Идет загрузка!</div> :
+        <>
         {cardInfo &&
           cardInfo.map((item: Record<string, number | string>) => (
             <div key={item.id} className="content-container__card">
@@ -56,6 +60,7 @@ export const MainBlock = ({ cardInfo, setCardInfo }: Item) => {
               </div>
             </div>
           ))}
+        </>}
       </div>
       {cardInfo && !cardInfo.length && (
         <div className="container-info container">
